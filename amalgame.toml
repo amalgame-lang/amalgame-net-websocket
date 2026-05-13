@@ -1,0 +1,29 @@
+# Package manifest — amalgame-net-websocket
+#
+# RFC 6455 WebSocket client. Text frames over plain TCP (ws://),
+# Sec-WebSocket-Accept SHA-1+Base64 computed in-process — no
+# OpenSSL dependency. wss:// / TLS is deferred to v0.2 once a
+# real consumer needs it.
+#
+# Originally shipped in amc's bundled `runtime/Amalgame_WebSocket.h`;
+# extracted into this external package as part of the v0.7.8
+# bundled-runtime trim.
+#
+# Installation:
+#
+#   amc package add net-websocket                  # via curated index
+#   amc package add github.com/amalgame-lang/amalgame-net-websocket@v0.1.0
+
+[package]
+name              = "amalgame-net-websocket"
+version           = "0.1.0"
+license           = "Apache-2.0"
+description       = "RFC 6455 WebSocket client: text frames, plain TCP, in-process SHA-1 + Base64."
+authors           = ["Bastien Mouget"]
+required-amalgame = ">=0.7.7"
+schema-version    = 1
+
+[stdlib]
+class     = "WebSocket"
+header    = "runtime/Amalgame_WebSocket.h"
+namespace = "Amalgame.Net.WebSocket"
